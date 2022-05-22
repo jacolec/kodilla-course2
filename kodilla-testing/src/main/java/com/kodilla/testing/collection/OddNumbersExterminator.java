@@ -5,12 +5,10 @@ import java.util.List;
 
 class OddNumbersExterminator {
 
-    public List<OddNumbersExterminator> exterminate(List<OddNumbersExterminator> numbers) {
-
-
+    public List<Integer> exterminate(List<Integer> numbers) {
 
         int tempNum;
-        List<OddNumbersExterminator> newList1 = new ArrayList<>();
+        List<Integer> newList1 = new ArrayList<>();
 
         for (int i = 0; i < numbers.size(); i++) {
             tempNum = numbers.get(i) % 2;

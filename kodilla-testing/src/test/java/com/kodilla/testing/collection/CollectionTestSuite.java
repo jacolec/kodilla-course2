@@ -32,34 +32,28 @@ public class CollectionTestSuite {
     void testOddNumbersExterminatorEmptyList() {
         //given
         List<Integer> newList1 = new ArrayList<>();
-        newList1.add(6);
-        newList1.add(5);
-        newList1.add(9);
-        newList1.add(12);
-        newList1.add(3);
-        newList1.add(4);
-        List<OddNumbersExterminator> numbers = new ArrayList<>();
+        List<Integer> numbers = new ArrayList<>();
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
         //when
-        List<Integer> tempList = exterminator.exterminate(newList1);
+        List<Integer> tempList1 = exterminator.exterminate(newList1);
         //then
-        Assertions.assertEquals(0, tempList.size());
+        Assertions.assertEquals(0, tempList1.size());
     }
     @DisplayName("checking if method exterminate() returns list of even numbers")
     @Test
     void testOddNumbersExterminatorNormalList() {
         //given
-        List<OddNumbersExterminator> testList = new ArrayList<>();
+        List<Integer> testList = new ArrayList<>();
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
         testList.add(4);
         testList.add(5);
         testList.add(10);
         testList.add(7);
         //when
-        exterminator.exterminate(testList);
-        int result;
-        for (int i=0; i<testList.size(); i++) {
-        result = testList.get(i) % 2;
+        List<Integer> tempList2 = exterminator.exterminate(testList);
+        int result = 0;
+        for (int i=0; i<tempList2.size(); i++) {
+        result = tempList2.get(i) % 2;
         }
         //then
         Assertions.assertEquals(0, result);
