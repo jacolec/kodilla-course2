@@ -26,12 +26,14 @@ class Circle implements Shape {
         this.r = r;
     }
 
-    @Override
+   /* @Override
     public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
+        int intResult
+        double result = name != null ? name.hashCode() : 0;
         result = 31 * result + (field != 0 ? field.hashCode() : 0);
-        return result;
-    }
+        intResult = (int)result;
+        return intResult;
+    }*/
 
     @Override
     public boolean equals(Object o) {

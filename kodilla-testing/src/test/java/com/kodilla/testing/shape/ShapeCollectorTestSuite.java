@@ -27,44 +27,55 @@ public class ShapeCollectorTestSuite {
         @Test
         void addTest() {
             //given
-            Square square1 = new Square("square1", 6);
-            square1.addFigure();
+            ShapeCollector shapecollector = new ShapeCollector();
             //when
-
-
+            Shape tempSquare = new Square("square1", 9);
+            shapecollector.addFigure(tempSquare);
             //then
-            Assertions.assertEquals(Square(), tempShape1);
+            Assertions.assertEquals(tempSquare, shapecollector.getFigure(0));
         }
         @Test
         void removeTest() {
             //given
-            List<Shape> shapeArray2 = new ArrayList<>();
-            shapeArray2.add(new Triangle());
-            shapeArray2.add(new Circle());
-            shapeArray2.add(new Square());
+            ShapeCollector shapecollector = new ShapeCollector();
+            Shape tempCircle = new Circle("circle2", 5);
+            Shape tempTriangle = new Triangle("triangle2", 10, 6);
             //when
-            Shape tempShape2 =
-
+            shapecollector.addFigure(tempCircle);
+            shapecollector.addFigure(tempTriangle);
+            shapecollector.removeFigure(tempCircle);
             //then
-            Assertions.assertEquals(0, a);
+            Assertions.assertEquals(tempTriangle, shapecollector.getFigure(0));
         }
-    }
-
 
         @Test
         void getTest() {
             //given
-            List<Shape> tempList3 = new ArrayList<>();
-            tempList3.add(triangle2);
-            tempList3.add(circle3);
-            tempList3.add(square3);
-            int x = 2;
-            Shape tempShape = tempList3.get(x);
+            ShapeCollector shapecollector = new ShapeCollector();
+            Shape square3 = new Square("square3", 4);
+            Shape circle3 = new Circle("circle3", 7);
+            Shape triangle3 = new Triangle("triangle3",11, 5);
             //when
-            Shape result  = tempList3.getFigure(2);
+            shapecollector.addFigure(square3);
+            shapecollector.addFigure(circle3);
+            shapecollector.addFigure(triangle3);
             //then
-            Assertions.assert(tempShape, result);
-
+            Assertions.assertEquals(circle3, shapecollector.getFigure(1));
         }
+        @Test
+        void showTest() {
+            //given
+            ShapeCollector shapecollector = new ShapeCollector();
+            Shape square4 = new Square("square4", 14);
+            //when
+            shapecollector.addFigure(square4);
+            String tempName = square4.getShapeName();
+            String sName = shapecollector.getFigure(0).getShapeName();
+            double tempField = square4.getField();
+            double sField = shapecollector.getFigure(0).getField();
+            Assertions.assertEquals(tempName, sName);
+            Assertions.assertEquals(tempField, sField);
+        }
+
 
 }

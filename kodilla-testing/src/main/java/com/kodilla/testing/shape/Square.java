@@ -26,12 +26,12 @@ class Square implements Shape {
         this.a = a;
     }
 
-    @Override
+    /*@Override
     public int hashCode() {
         int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (field != 0 ? field.hashCode() : 0);
         return result;
-    }
+    }*/
 
     @Override
     public boolean equals(Object o) {
@@ -41,5 +41,5 @@ class Square implements Shape {
 
     @Override
     public String toString() {
-        return "shape: " + name + ", " + "field: " + field;
+        return "shape: " + name + ", " + "field: " + field; }
 }
