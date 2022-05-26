@@ -24,17 +24,14 @@ public class ShapeCollectorTestSuite {
         System.out.println("Test Suite: end");
     }
 
-    @Nested
-    class ArrayListSizeOperations {
         @Test
         void addTest() {
             //given
-            List<Shape> shapeArray1 = new ArrayList<>();
-            shapeArray1.add(new Triangle());
-            shapeArray1.add(new Circle());
-            shapeArray1.add(new Square());
+            Square square1 = new Square("square1", 6);
+            square1.addFigure();
             //when
-            Shape tempShape1 = shapeArray1.get(2);
+
+
             //then
             Assertions.assertEquals(Square(), tempShape1);
         }
@@ -53,8 +50,7 @@ public class ShapeCollectorTestSuite {
         }
     }
 
-    @Nested
-    class ArrayListDisplayOperations {
+
         @Test
         void getTest() {
             //given
@@ -70,5 +66,5 @@ public class ShapeCollectorTestSuite {
             Assertions.assert(tempShape, result);
 
         }
-    }
+
 }

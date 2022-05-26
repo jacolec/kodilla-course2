@@ -5,21 +5,8 @@ import java.util.List;
 class ShapeCollector {
     private List<Shape> shapeList = new ArrayList<>();
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        Shape x = (Shape) o;
-        return (shapeList.get().getShapeName().equals(x.getShapeName()) &&
-                (shapeList.get().getField() == x.getField());
-    }
-
-    @Override
-    public String toString() {
-        return "shape: " + shapeList.get().getShapeName() + ", " + "field: " + shapeList.get().getField();
+    public ShapeCollector(Shape shape) {
+        return this.shape;
     }
 
     public void addFigure(Shape shape) {
@@ -39,5 +26,6 @@ class ShapeCollector {
     public void showFigures() {
         System.out.println(shapeList);
     }
+
 
 }
