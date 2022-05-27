@@ -51,11 +51,10 @@ public class CollectionTestSuite {
         testList.add(7);
         //when
         List<Integer> tempList2 = exterminator.exterminate(testList);
-        int result = 0;
-        for (int i=0; i<tempList2.size(); i++) {
-        result = tempList2.get(i) % 2;
-        }
+        List<Integer> expectedList = new ArrayList<>();
+        expectedList.add(4);
+        expectedList.add(10);
         //then
-        Assertions.assertEquals(0, result);
+        Assertions.assertEquals(expectedList, tempList2);
     }
 }
