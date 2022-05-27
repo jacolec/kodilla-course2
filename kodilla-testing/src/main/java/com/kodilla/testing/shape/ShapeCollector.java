@@ -18,15 +18,20 @@ class ShapeCollector {
 
     public Shape getFigure(int n) {
         Shape shape = null;
-        for (n=0; n < shapeList.size(); n++)
-        shape = shapeList.get(n);
+        for (n = 0; n < shapeList.size(); n++) {
+        shape = shapeList.get(n);}
         return shape;
 
     }
 
-    public void showFigures() {
-        System.out.println(shapeList);
+    public String showFigures() {
+        String myShape = null;
+        for (int n = 0; n < shapeList.size(); n++) {
+            myShape = shapeList.get(n).toString(); }
+        return myShape;
+        }
+
     }
 
 
-}
+
