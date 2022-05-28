@@ -1,5 +1,7 @@
 package com.kodilla.testing.shape;
 
+import java.util.Objects;
+
 class Circle implements Shape {
     String name;
     double r;
@@ -26,14 +28,10 @@ class Circle implements Shape {
         this.r = r;
     }
 
-   /* @Override
+   @Override
     public int hashCode() {
-        int intResult
-        double result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (field != 0 ? field.hashCode() : 0);
-        intResult = (int)result;
-        return intResult;
-    }*/
+        return Objects.hash(name, field, r);
+    }
 
     @Override
     public boolean equals(Object o) {

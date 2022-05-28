@@ -18,8 +18,8 @@ class ShapeCollector {
 
     public Shape getFigure(int n) {
         Shape shape = null;
-        for (n = 0; n < shapeList.size(); n++) {
-        shape = shapeList.get(n);}
+        //for (n = 0; n < shapeList.size(); n++) {
+        shape = shapeList.get(n);//}
         return shape;
 
     }

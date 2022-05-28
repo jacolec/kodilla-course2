@@ -69,12 +69,10 @@ public class ShapeCollectorTestSuite {
             Shape square4 = new Square("square4", 14);
             //when
             shapecollector.addFigure(square4);
-            String tempName = square4.getShapeName();
-            String sName = shapecollector.getFigure(0).getShapeName();
-            double tempField = square4.getField();
-            double sField = shapecollector.getFigure(0).getField();
-            Assertions.assertEquals(tempName, sName);
-            Assertions.assertEquals(tempField, sField);
+            String expectedFigure = square4.toString();
+            String tempFigure = shapecollector.showFigures();
+            //then
+            Assertions.assertEquals(expectedFigure, tempFigure);
         }
 
 
