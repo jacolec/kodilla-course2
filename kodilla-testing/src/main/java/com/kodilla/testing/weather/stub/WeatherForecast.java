@@ -31,23 +31,23 @@ public class WeatherForecast {
 
         }
 
-        public double medianTemperature() {
-            Map<String, Double> temperature2Map = new HashMap<>();
-            List<Double> valueList = new ArrayList<>();
+    public double medianTemperature() {
+        Map<String, Double> temperature2Map = new HashMap<>();
+        List<Double> valueList = new ArrayList<>();
         double median = 0;
         double value = 0;
         int x = 0;
-            for (Map.Entry<String, Double> temperature2 :
-                    temperatures.getTemperatures().entrySet()) {
-                temperature2Map.put(temperature2.getKey(), temperature2.getValue());
-                value = temperature2.getValue();
-                valueList.add(value); }
-            Collections.sort(valueList);
-            x = (valueList.size()+1) / 2;
-            median = valueList.get(x-1);
-            return median;
+        for (Map.Entry<String, Double> temperature2 :
+                temperatures.getTemperatures().entrySet()) {
+            temperature2Map.put(temperature2.getKey(), temperature2.getValue());
+            value = temperature2.getValue();
+            valueList.add(value); }
+        Collections.sort(valueList);
+        x = (valueList.size()+1) / 2;
+        median = valueList.get(x-1);
+        return median;
 
-            }
+    }
 
         }
 

@@ -20,12 +20,6 @@ public class BookLibrary {
     }
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
-        List<Book> tempBookList = new ArrayList<>();
-        if (tempBookList.size() == 0)  return tempBookList;
-        List<Book> borrowedBooks = libraryDatabase.listBooksInHandsOf(libraryUser);
-        if (borrowedBooks.size() == 1) return tempBookList;
-        if (borrowedBooks.size() == 5) return tempBookList;
-        tempBookList = borrowedBooks;
-        return tempBookList;
+        return libraryDatabase.listBooksInHandsOf(libraryUser);
     }
 }
