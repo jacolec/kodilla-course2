@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
+import org.junit.jupiter.api.Assertions;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +25,6 @@ public class ForumStatisticsTestSuite {
     @Test
     void zeroPostsTest() {
         //Given
-        StatsCount statsCount = new StatsCount(statisticsMock);
         List<String> testUsers1 = listOfNUsers(10);
         int users1 = 10;
         int posts1 = 0;
@@ -36,8 +35,12 @@ public class ForumStatisticsTestSuite {
         when(statisticsMock.usersNames()).thenReturn(testUsers1);
         when(statisticsMock.postsCount()).thenReturn(posts1);
         when(statisticsMock.commentsCount()).thenReturn(comments1);
+        StatsCount statsCount = new StatsCount(statisticsMock);
         //When
-        List<String> tempList1 = statsCount.calculateAdvStatistics(testUsers1);
+
+
+        //Then
+
 
 
     }
