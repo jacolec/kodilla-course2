@@ -18,13 +18,21 @@ public class StatsCount {
     private double averageCommPost;
 
     public void calculateAdvStatistics(Statistics statistics) {
+        String zeroDivision = null;
         List<String> userList = statistics.usersNames();
         userNum = userList.size();
         postNum = statistics.postsCount();
         commentNum = statistics.commentsCount();
-        averagePost = postNum / userNum;
-        averageComment = commentNum / userNum;
-        averageCommPost = commentNum / postNum;
+        averagePost = 0;
+        averageComment = 0;
+        averageCommPost = 0;
+        if (userNum == 0)  {
+            zeroDivision = "FORBIDDEN OPERATION";
+        } else {
+            averagePost = postNum / userNum;
+            averageComment = commentNum / userNum;
+            averageCommPost = commentNum / postNum;
+        }
     }
 
     public void showStatistics() {
