@@ -85,7 +85,24 @@ import java.util.List;
         @Test
         void testListBooksInHandsOf() {
             //Given
-
+            LibraryUser user1 = new LibraryUser("Name1", "Surname1", "pesel1");
+            LibraryUser user2 = new LibraryUser("Name2", "Surname2", "pesel2");
+            LibraryUser user3 = new LibraryUser("Name3", "Surname3", "pesel3");
+            BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+            List<Book> listOf0Books = new ArrayList<>();
+            List<Book> listOf1Books = generateListOfNBooks(1);
+            List<Book> listOf5Books = generateListOfNBooks(5);
+            when(libraryDatabaseMock.listBooksInHandsOf(user1)).thenReturn(listOf0Books);
+            when(libraryDatabaseMock.listBooksInHandsOf(user2)).thenReturn(listOf1Books);
+            when(libraryDatabaseMock.listBooksInHandsOf(user3)).thenReturn(listOf5Books);
+            //When
+            List<Book> tempListOf0Books = bookLibrary.listBooksInHandsOf(user1);
+            List<Book> tempListOf1Books = bookLibrary.listBooksInHandsOf(user2);
+            List<Book> tempListOf5Books = bookLibrary.listBooksInHandsOf(user3);
+            //Then
+            assertEquals(0, tempListOf0Books.size());
+            assertEquals(1, tempListOf1Books.size());
+            assertEquals(5, tempListOf5Books.size());
         }
     }
 
