@@ -28,15 +28,17 @@ class Circle implements Shape {
         this.r = r;
     }
 
-   @Override
-    public int hashCode() {
-        return Objects.hash(name, field, r);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Circle circle = (Circle) o;
+        return Double.compare(circle.r, r) == 0 && Double.compare(circle.field, field) == 0 && name.equals(circle.name);
     }
 
     @Override
-    public boolean equals(Object o) {
-        Circle s = (Circle) o;
-        return (this.name.equals(s.getName())) && (this.field == (s.getField()));
+    public int hashCode() {
+        return Objects.hash(name, r, field);
     }
 
     @Override

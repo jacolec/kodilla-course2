@@ -59,10 +59,6 @@ class WeatherForecastTestSuite {
     @Test
     void medianTemperatureTest() {
         //Given
-        double tempValue = 0;
-        double expectedMedian = 0;
-        int y = 0;
-        List<Double> testValues = new ArrayList<>();
         Map<String, Double> testMap2 = new HashMap<>();
         testMap2.put("Rzeszow", 25.5);
         testMap2.put("Krakow", 26.2);
@@ -72,12 +68,7 @@ class WeatherForecastTestSuite {
         when(temperaturesMock.getTemperatures()).thenReturn(testMap2);
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
         //When
-        for (Map.Entry<String, Double> tempMap2 : testMap2.entrySet()) {
-            tempValue = tempMap2.getValue();
-            testValues.add(tempValue); }
-        Collections.sort(testValues);
-        y = (testValues.size()+1) / 2;
-        expectedMedian = testValues.get(y);
+        double expectedMedian = 25.5;
         double testMedian = weatherForecast.medianTemperature();
         //Then
         Assertions.assertEquals(expectedMedian, testMedian);

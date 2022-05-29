@@ -13,7 +13,7 @@ public class WeatherForecast {
 
         for (Map.Entry<String, Double> temperature :
                 temperatures.getTemperatures().entrySet()) {
-            resultMap.put(temperature.getKey(), temperature.getValue() + 1.0);
+            resultMap.put(temperature.getKey(), temperature.getValue() + 1);
         }
         return resultMap;
     }
@@ -24,9 +24,8 @@ public class WeatherForecast {
         double sum = 0;
         for (Map.Entry<String, Double> temperature1 :
                 temperatures.getTemperatures().entrySet()) {
-            temperatureMap.put(temperature1.getKey(), temperature1.getValue()); }
-        for (Map.Entry<String, Double> temperature2 : temperatureMap.entrySet()) {
-            sum += temperature2.getValue(); }
+            temperatureMap.put(temperature1.getKey(), temperature1.getValue());
+            sum += temperature1.getValue(); }
             average = sum / temperatureMap.size();
         return average;
 
@@ -40,15 +39,16 @@ public class WeatherForecast {
         int x = 0;
             for (Map.Entry<String, Double> temperature2 :
                     temperatures.getTemperatures().entrySet()) {
-                temperature2Map.put(temperature2.getKey(), temperature2.getValue()); }
-            for (Map.Entry<String, Double> temperature3 : temperature2Map.entrySet()) {
-                value = temperature3.getValue();
+                temperature2Map.put(temperature2.getKey(), temperature2.getValue());
+                value = temperature2.getValue();
                 valueList.add(value); }
             Collections.sort(valueList);
             x = (valueList.size()+1) / 2;
-            median = valueList.get(x);
+            median = valueList.get(x-1);
             return median;
+
             }
+
         }
 
 

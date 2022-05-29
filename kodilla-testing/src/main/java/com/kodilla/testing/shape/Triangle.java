@@ -35,14 +35,16 @@ class Triangle implements Shape {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(name, field, b, h);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Triangle triangle = (Triangle) o;
+        return Double.compare(triangle.field, field) == 0 && Double.compare(triangle.b, b) == 0 && Double.compare(triangle.h, h) == 0 && name.equals(triangle.name);
     }
 
     @Override
-    public boolean equals(Object o) {
-        Triangle s = (Triangle) o;
-        return (this.name.equals(s.getName())) && (this.field == (s.getField()));
+    public int hashCode() {
+        return Objects.hash(name, field, b, h);
     }
 
     @Override

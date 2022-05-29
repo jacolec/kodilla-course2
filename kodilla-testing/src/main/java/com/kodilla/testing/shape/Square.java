@@ -29,14 +29,16 @@ class Square implements Shape {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(name, field, a);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Square square = (Square) o;
+        return Double.compare(square.field, field) == 0 && Double.compare(square.a, a) == 0 && name.equals(square.name);
     }
 
     @Override
-    public boolean equals(Object o) {
-        Square s = (Square) o;
-        return (this.name.equals(s.getName())) && (this.field == (s.getField()));
+    public int hashCode() {
+        return Objects.hash(name, field, a);
     }
 
     @Override
