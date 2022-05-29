@@ -23,11 +23,22 @@ public class ForumStatisticsTestSuite {
         } return tempUserList;
     }
     @Test
-    void StatsCountTest() {
+    void zeroPostsTest() {
         //Given
         StatsCount statsCount = new StatsCount(statisticsMock);
         List<String> testUsers1 = listOfNUsers(10);
-      //  when(statisticsMock.calculateAdvStatistics());
+        int users1 = 10;
+        int posts1 = 0;
+        int comments1 = 0;
+        double avPostUser1 = posts1 / users1;
+        double avCommUser1 = comments1 / users1;
+        double avCommPost1 = comments1 / posts1;
+        when(statisticsMock.usersNames()).thenReturn(testUsers1);
+        when(statisticsMock.postsCount()).thenReturn(posts1);
+        when(statisticsMock.commentsCount()).thenReturn(comments1);
+        //When
+        List<String> tempList1 = statsCount.calculateAdvStatistics(testUsers1);
+
 
     }
 

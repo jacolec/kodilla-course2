@@ -49,8 +49,8 @@ class WeatherForecastTestSuite {
         //When
         double testSum = 0;
         double expectedAverage = 0;
-        for (Map.Entry<String, Double> tempEntry : testMap1.entrySet()) {
-            testSum += tempEntry.getValue(); }
+        for (Map.Entry<String, Double> tempAv1 : testMap1.entrySet()) {
+            testSum += tempAv1.getValue(); }
         expectedAverage = testSum / testMap1.size();
         double testAverage = weatherForecast.averageTemperature();
         //Then

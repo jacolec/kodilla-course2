@@ -23,11 +23,8 @@ public class StatsCount {
         userNum = userList.size();
         postNum = statistics.postsCount();
         commentNum = statistics.commentsCount();
-        averagePost = 0;
-        averageComment = 0;
-        averageCommPost = 0;
-        if (userNum == 0)  {
-            zeroDivision = "FORBIDDEN OPERATION";
+        if ((userNum == 0) || (postNum == 0)) {
+            zeroDivision = "OPERATION FORBIDDEN";
         } else {
             averagePost = postNum / userNum;
             averageComment = commentNum / userNum;
