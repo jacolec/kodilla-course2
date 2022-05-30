@@ -29,7 +29,6 @@ public class ForumStatisticsTestSuite {
         int users1 = 10;
         int posts1 = 0;
         int comments1 = 4; //impossible when no posts
-        //String noWay = "OPERATION FORBIDDEN";
         when(statisticsMock.usersNames()).thenReturn(testUsers1);
         when(statisticsMock.postsCount()).thenReturn(posts1);
         when(statisticsMock.commentsCount()).thenReturn(comments1);
@@ -40,11 +39,16 @@ public class ForumStatisticsTestSuite {
         int tempComments1 = statsCount.numberOfComments(comments1);
         double avPostUser1 = tempPosts1 / tempUserList1.size();
         double avCommUser1 = tempComments1 / tempUserList1.size();
-        double avCommPost1 = tempComments1 / tempPosts1;
+        double avCommPost1 = 0;
+        if (tempPosts1 == 0) {
+            String noWay = Double.toString(avCommPost1);
+            noWay = "OERATION FORBIDDEN";
+        } else {
+        avCommPost1 = tempComments1 / tempPosts1; }
         //Then
         Assertions.assertEquals(0, avPostUser1);
         Assertions.assertEquals(0.4, avCommUser1);
-        Assertions.assertNotEquals(0, avCommPost1);
+        Assertions.assertEquals("OPERATION FORBIDDEN", avCommPost1);
     }
 
     @Test
