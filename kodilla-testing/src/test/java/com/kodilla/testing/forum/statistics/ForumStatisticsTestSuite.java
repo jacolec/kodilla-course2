@@ -28,7 +28,7 @@ public class ForumStatisticsTestSuite {
         List<String> testUsers1 = listOfNUsers(10);
         int users1 = 10;
         int posts1 = 0;
-        int comments1 = 0;
+        int comments1 = 4; //impossible when no posts
         double avPostUser1 = posts1 / users1;
         double avCommUser1 = comments1 / users1;
         double avCommPost1 = comments1 / posts1;
@@ -37,6 +37,10 @@ public class ForumStatisticsTestSuite {
         when(statisticsMock.commentsCount()).thenReturn(comments1);
         StatsCount statsCount = new StatsCount(statisticsMock);
         //When
+        List<String> tempUserList1 = statsCount.userNameList(testUsers1);
+        int
+
+
 
 
         //Then

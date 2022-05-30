@@ -17,12 +17,20 @@ public class StatsCount {
     private double averageComment;
     private double averageCommPost;
 
+
+    public List<String> userNameList(Statistics statistics) {
+        return statistics.usersNames();
+    }
+    public int numberOfPosts(Statistics statistics) {
+        return statistics.postsCount();
+    }
+    public int numberOfComments(Statistics statistics) {
+        return statistics.commentsCount();
+    }
+
     public void calculateAdvStatistics(Statistics statistics) {
         String zeroDivision = null;
-        List<String> userList = statistics.usersNames();
-        userNum = userList.size();
-        postNum = statistics.postsCount();
-        commentNum = statistics.commentsCount();
+        userNum = userNameList().size();
         if ((userNum == 0) || (postNum == 0)) {
             zeroDivision = "OPERATION FORBIDDEN";
         } else {
