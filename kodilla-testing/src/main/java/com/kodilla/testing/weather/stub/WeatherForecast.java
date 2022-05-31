@@ -19,10 +19,10 @@ public class WeatherForecast {
     }
 
     public double averageTemperature() {
-        List<Double> valueList1 = (List<Double>) temperatures.getTemperatures().values();
+        Collection<Double> valueList1 = temperatures.getTemperatures().values();
         double sum = 0;
-        for (int i=0; i < valueList1.size(); i++) {
-           sum += valueList1.get(i); }
+        for (double tempValueList1 : valueList1) {
+           sum += tempValueList1; }
            double  average = sum / valueList1.size();
         return average;
 
