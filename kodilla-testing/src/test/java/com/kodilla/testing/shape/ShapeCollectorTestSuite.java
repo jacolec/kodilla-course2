@@ -67,9 +67,13 @@ public class ShapeCollectorTestSuite {
             //given
             ShapeCollector shapecollector = new ShapeCollector();
             Shape square4 = new Square("square4", 14);
+            Shape triangle4 = new Triangle("triangle4", 10, 8);
+            Shape circle4 = new Circle("circle4", 4);
             //when
             shapecollector.addFigure(square4);
-            String expectedFigure = square4.toString();
+            shapecollector.addFigure(triangle4);
+            shapecollector.addFigure(circle4);
+            String expectedFigure = square4.toString() + triangle4.toString() + circle4.toString();
             String tempFigure = shapecollector.showFigures();
             //then
             Assertions.assertEquals(expectedFigure, tempFigure);
