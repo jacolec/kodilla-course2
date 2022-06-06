@@ -29,10 +29,11 @@ public class WeatherForecast {
         }
 
     public double medianTemperature() {
-        Collection<Double> tempValueList2 = temperatures.getTemperatures().values();
-        List<Double> valueList2 = (List<Double>) tempValueList2;
+        /* Collection<Double> tempValueList2 = temperatures.getTemperatures().values();
+        List<Double> valueList2 = (List<Double>) tempValueList2; */
+        List<Double> valueList2 = new ArrayList<>( temperatures.getTemperatures().values());
         double median = 0;
-        double value = 0;
+        // double value = 0;
         int x = 0;
         Collections.sort(valueList2);
         x = (valueList2.size()+1) / 2;
