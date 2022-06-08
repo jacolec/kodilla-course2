@@ -6,11 +6,16 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SecondChallengeTestSuite {
 
     @Test
-    void xEqualsTwoTest() {
+    void xAndYTest() {
         //given
         SecondChallenge secondChallenge = new SecondChallenge();
         //when & then
-        assertThrows(Exception.class, secondChallenge.probablyIWillThrowException(2, 3));
+        assertAll(
+                () -> assertThrows(Exception.class, secondChallenge.probablyIWillThrowException(2, 3)),
+                () -> assertThrows(Exception.class, secondChallenge.probablyIWillThrowException(1, 3)),
+                () -> assertThrows(Exception.class, secondChallenge.probablyIWillThrowException(1.5, 1.5)),
+                () -> assertDoesNotThrow(Exception.class, secondChallenge.probablyIWillThrowException(1.5, 4))
+        );
 
 
     }
