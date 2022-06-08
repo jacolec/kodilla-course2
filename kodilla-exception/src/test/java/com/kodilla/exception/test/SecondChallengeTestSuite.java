@@ -8,7 +8,7 @@ public class SecondChallengeTestSuite {
     @Test
     void xAndYTest() {
         //given
-        SecondChallenge secondChallenge = new SecondChallenge();
+        //SecondChallenge secondChallenge = new SecondChallenge();
         //when & then
         assertAll(
                 () -> assertThrows(Exception.class, secondChallenge.probablyIWillThrowException(2, 3)),
