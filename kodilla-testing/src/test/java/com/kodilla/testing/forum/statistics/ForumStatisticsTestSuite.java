@@ -37,7 +37,7 @@ public class ForumStatisticsTestSuite {
         List<String> tempUserList1 = statsCount.userNameList(users1);
         int tempPosts1 = statsCount.numberOfPosts(posts1);
         int tempComments1 = statsCount.numberOfComments(comments1);
-        double avPostUser1 = tempPosts1 / tempUserList1.size();
+        double avPostUser1 = 0; //tempPosts1 / tempUserList1.size();
         double avCommUser1 = tempComments1 / tempUserList1.size();
         double avCommPost1 = 0;
         if (tempPosts1 == 0) {

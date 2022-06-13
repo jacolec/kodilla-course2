@@ -1,17 +1,19 @@
 package com.kodilla.stream.array;
 
 import java.util.OptionalDouble;
+import java.util.OptionalInt;
 import java.util.stream.IntStream;
 
 public interface ArrayOperations {
 
     static double getAverage(final int[] numbers) {
 
-       IntStream display = IntStream.range(numbers[0], (numbers[(numbers.length - 1)]));
-       display.forEach(System.out::println);
+        IntStream x = IntStream.range(0, numbers.length)
+                .map(i -> numbers[i]);
+        System.out.println(x);
 
-
-        OptionalDouble average = IntStream.range(numbers[0], (numbers[(numbers.length - 1)]))
+        OptionalDouble average = IntStream.range(0, numbers.length)
+                .map(i -> numbers[i])
                 .average();
         double avr = average.getAsDouble();
 

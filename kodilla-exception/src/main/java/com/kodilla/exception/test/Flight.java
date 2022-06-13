@@ -19,7 +19,7 @@ public class Flight {
     public String getArrivalAirport() {
         return arrivalAirport;
     }
-/*
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -32,12 +32,4 @@ public class Flight {
     public int hashCode() {
         return Objects.hash(departureAirport, arrivalAirport);
     }
-
-    @Override
-    public String toString() {
-        return "Flight{" +
-                "departureAirport='" + departureAirport + '\'' +
-                ", arrivalAirport='" + arrivalAirport + '\'' +
-                '}';
-    } */
 }

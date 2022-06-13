@@ -29,10 +29,12 @@ public class StatsCount {
     }
 
     public void calculateAdvStatistics(Statistics statistics) {
-        String zeroDivision = null;
+        String zeroDivision = "";
         List<String> calculationUserList = statistics.usersNames();
         userNum = calculationUserList.size();
-        if ((userNum == 0) || (postNum == 0)) {
+        postNum = statistics.postsCount();
+        commentNum = statistics.commentsCount();
+        if (((userNum == 0) && (postNum != 0)) || ((userNum != 0) && (postNum == 0))){
             zeroDivision = "OPERATION FORBIDDEN";
         } else {
             averagePost = postNum / userNum;

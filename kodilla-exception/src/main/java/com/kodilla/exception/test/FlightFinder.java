@@ -12,17 +12,17 @@ public class FlightFinder {
         flightMap.put("Chicago", true);
         flightMap.put("Paris", true);
 
-        for (Map.Entry<String, Boolean> tempAirport : flightMap.entrySet()) {
-            boolean isPossible = tempAirport.getValue();
+        if ((flightMap.get(flight.getArrivalAirport()) == false)
+            || (flightMap.get(flight.getDepartureAirport()) == false)
+                || (flightMap.get(flight.getDepartureAirport()) == null)
+                || (flightMap.get(flight.getArrivalAirport()) == null)) {
 
-            if ((tempAirport.getKey() != flight.getArrivalAirport())
-                    || (tempAirport.getKey() != flight.getDepartureAirport())
-                    || (isPossible = false)) {
-                throw new RouteNotFoundException();
+            throw new RouteNotFoundException();
+
             } else {
                 System.out.println("Flight is available! Book your tickets!");
             }
-        }
+
         return ("Chosen flight: FROM " + flight.getDepartureAirport() + " TO " + flight.getArrivalAirport());
     }
 
