@@ -17,6 +17,17 @@ public class StatsCount {
     private double averageComment;
     private double averageCommPost;
 
+    public double getAveragePost() {
+        return averagePost;
+    }
+
+    public double getAverageComment() {
+        return averageComment;
+    }
+
+    public double getAverageCommPost() {
+        return averageCommPost;
+    }
 
     public List<String> userNameList(int u) {
         return statistics.usersNames();
@@ -29,14 +40,24 @@ public class StatsCount {
     }
 
     public void calculateAdvStatistics(Statistics statistics) {
-        String zeroDivision = "";
+
         List<String> calculationUserList = statistics.usersNames();
         userNum = calculationUserList.size();
         postNum = statistics.postsCount();
         commentNum = statistics.commentsCount();
-        if (((userNum == 0) && (postNum != 0)) || ((userNum != 0) && (postNum == 0))){
-            zeroDivision = "OPERATION FORBIDDEN";
-        } else {
+        if (userNum == 0) {
+            averagePost = 0;
+            averageComment = 0;
+            averageCommPost = commentNum / postNum;
+
+        }
+        if (postNum == 0) {
+            averagePost = 0;
+            averageComment = commentNum / userNum;
+            averageCommPost = 0;
+
+        }
+        else {
             averagePost = postNum / userNum;
             averageComment = commentNum / userNum;
             averageCommPost = commentNum / postNum;
