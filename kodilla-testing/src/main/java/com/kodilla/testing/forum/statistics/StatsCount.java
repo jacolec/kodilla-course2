@@ -49,8 +49,8 @@ public class StatsCount {
             averagePost = 0;
             averageComment = 0;
             averageCommPost = (double) commentNum / postNum;
-
         }
+
         if (postNum == 0) {
             averagePost = 0;
             averageComment = (double) commentNum / userNum;

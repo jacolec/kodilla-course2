@@ -17,7 +17,7 @@ public class ForumStatisticsTestSuite {
 
     private List<String> listOfNUsers(int number) {
         List<String> tempUserList = new ArrayList<>();
-        for (int n=1; n < number; n++) {
+        for (int n=0; n < number; n++) {
             String newUser = new String ("user"+n);
             tempUserList.add(newUser);
         } return tempUserList;
@@ -51,7 +51,6 @@ public class ForumStatisticsTestSuite {
         int users2 = 10;
         int posts2 = 1000;
         int comments2 = 4;
-        //String noWay = "OPERATION FORBIDDEN";
         when(statisticsMock.usersNames()).thenReturn(testUsers2);
         when(statisticsMock.postsCount()).thenReturn(posts2);
         when(statisticsMock.commentsCount()).thenReturn(comments2);
@@ -64,7 +63,7 @@ public class ForumStatisticsTestSuite {
         //Then
         Assertions.assertEquals(100, avPostUser2);
         Assertions.assertEquals(0.4, avCommUser2);
-        Assertions.assertNotEquals(0.004, avCommPost2);
+        Assertions.assertEquals(0.004, avCommPost2);
     }
 
     @Test
@@ -74,7 +73,6 @@ public class ForumStatisticsTestSuite {
         int users3 = 10;
         int posts3 = 2;
         int comments3 = 0;
-        //String noWay = "OPERATION FORBIDDEN";
         when(statisticsMock.usersNames()).thenReturn(testUsers3);
         when(statisticsMock.postsCount()).thenReturn(posts3);
         when(statisticsMock.commentsCount()).thenReturn(comments3);
@@ -119,7 +117,6 @@ public class ForumStatisticsTestSuite {
         int users5 = 10;
         int posts5 = 40;
         int comments5 = 20;
-        //String noWay = "OPERATION FORBIDDEN";
         when(statisticsMock.usersNames()).thenReturn(testUsers5);
         when(statisticsMock.postsCount()).thenReturn(posts5);
         when(statisticsMock.commentsCount()).thenReturn(comments5);
