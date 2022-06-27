@@ -48,18 +48,15 @@ public class StatsCount {
         if (userNum == 0) {
             averagePost = 0;
             averageComment = 0;
-            averageCommPost = (double) commentNum / postNum;
+        } else {
+            averagePost = (double) postNum / userNum;
+            averageComment = (double) commentNum / userNum;
         }
 
         if (postNum == 0) {
-            averagePost = 0;
-            averageComment = (double) commentNum / userNum;
             averageCommPost = 0;
-
         }
         else {
-            averagePost = (double) postNum / userNum;
-            averageComment = (double) commentNum / userNum;
             averageCommPost = (double) commentNum / postNum;
         }
     }
