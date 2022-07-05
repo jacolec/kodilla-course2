@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/*
 final class MovieStore {
 
     public Map<String, List<String>> getMovies() {
@@ -27,4 +27,4 @@ final class MovieStore {
 
         return booksTitlesWithTranslations;
     }
-}
+} */
