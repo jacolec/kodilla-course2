@@ -3,18 +3,18 @@ package com.kodilla.good.patterns.challenges;
 public class PurchaseDto {
 
     private User user;
-    private boolean isProductAvailable; //depends od product name and available quantity
+    private boolean isPurchased; //depends od product name and available quantity
 
-    public PurchaseDto(User user, boolean isProductAvailable) {
+    public PurchaseDto(User user, boolean isPurchased) {
         this.user = user;
-        this.isProductAvailable = isProductAvailable;
+        this.isPurchased = isPurchased;
     }
 
     public User getUser() {
         return user;
     }
 
-    public boolean isProductAvailable() {
-        return isProductAvailable;
+    public boolean isPurchased() {
+        return isPurchased;
     }
 }
