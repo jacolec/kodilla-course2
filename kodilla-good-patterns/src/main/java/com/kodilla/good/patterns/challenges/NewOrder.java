@@ -31,6 +31,6 @@ public class NewOrder implements SendConfirmation {
     }
 
     public void inform(User user) {
-        System.out.println("the email confirmation has been sent!");
+        System.out.println("the email confirmation for user " + getUser() + " has been sent!");
     }
 }
