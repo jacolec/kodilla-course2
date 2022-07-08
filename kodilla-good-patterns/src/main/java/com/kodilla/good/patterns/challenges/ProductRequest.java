@@ -1,17 +1,15 @@
 package com.kodilla.good.patterns.challenges;
 
-public class NewOrder implements SendConfirmation {
+public class ProductRequest implements ProductRepository {
 
     private User user;
     private String product;
     private int quantity;
-    private String city;
 
-    public NewOrder(User user, String product, int quantity, String city) {
+    public ProductRequest(User user, String product, int quantity) {
         this.user = user;
         this.product = product;
         this.quantity = quantity;
-        this.city = city;
     }
 
     public User getUser() {
@@ -26,11 +24,14 @@ public class NewOrder implements SendConfirmation {
         return quantity;
     }
 
-    public String getCity() {
-        return city;
+    @Override
+    public void createOrder(User user, String product, int quantity) {
+        System.out.println("NEW ORDER" + "\n" +
+                "User: " + getUser() + "\n" +
+                "Product: " + getProduct() + "\n" +
+                "Quantity: " + getQuantity());
+
     }
 
-    public void inform(User user) {
-        System.out.println("the email confirmation for user " + getUser() + " has been sent!");
-    }
+
 }

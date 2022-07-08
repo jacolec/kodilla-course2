@@ -2,25 +2,34 @@ package com.kodilla.good.patterns.challenges;
 
 public class User {
 
-    private String userName;
+    private String name;
     private String realName;
-    private String email;
+    private String city;
 
-    public User(String userName, String realName, String email) {
-        this.userName = userName;
+    public User(String name, String realName, String city) {
+        this.name = name;
         this.realName = realName;
-        this.email = email;
+        this.city = city;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
     public String getRealName() {
         return realName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCity() {
+        return city;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", realName='" + realName + '\'' +
+                ", city='" + city + '\'' +
+                '}';
     }
 }

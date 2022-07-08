@@ -4,11 +4,9 @@ public class Application {
 
     public static void main(String[] args) {
 
-        OrderRetriever orderRetriever = new OrderRetriever();
-        NewOrder newOrder = orderRetriever.retrieve();
-        ProductOrderService productOrderService = new ProductOrderService(new ProductPurchase(newOrder.getProduct(), newOrder.getQuantity(), newOrder.getUser(), newOrder.getCity()),
-                newOrder.inform(newOrder.getUser()),
-
+        ProductRequestRetriever productRequestRetriever = new ProductRequestRetriever();
+        ProductRequest productRequest = productRequestRetriever.retrieve();
+        ProductProcessor productProcessor = new ProductProcessor(new ConfirmationService(), productRequestRetriever, productRequest);
+        productProcessor.process(productRequest);
     }
-
 }
