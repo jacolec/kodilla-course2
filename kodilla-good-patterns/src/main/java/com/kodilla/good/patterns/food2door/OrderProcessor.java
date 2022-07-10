@@ -4,12 +4,10 @@ public class OrderProcessor {
 
     private ProductService productService;
     private FoodRepository foodRepository;
-    private  ShopService shopService;
 
-    public OrderProcessor(ProductService productService, FoodRepository foodRepository, ShopService shopService) {
+    public OrderProcessor(ProductService productService, FoodRepository foodRepository) {
         this.productService = productService;
         this.foodRepository = foodRepository;
-        this.shopService = shopService;
     }
 
     public FoodDto order(FoodRequest foodRequest) {

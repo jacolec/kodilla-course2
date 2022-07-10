@@ -35,14 +35,7 @@ public class FoodRequest implements FoodRepository {
         System.out.println("NEW ORDER" + "\n" +
                 "User: " + getUser() + "\n" +
                 "Product: " + getProduct() + "\n" +
-                "Quantity: " + getQuantity() +
+                "Quantity: " + getQuantity() + "\n" +
                 "Shop: " + getShop());
     }
-/*
-    @Override
-    public FoodRequest validateShop(String shop) {
-        return null;
-    } */
-
-
 }
