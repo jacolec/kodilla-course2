@@ -1,5 +1,6 @@
 package com.kodilla.good.patterns.flights;
 
 public interface FlightService {
-    boolean findflight(Flight flight);
+    boolean flyTo(Flight flight);
+    boolean flyFrom(Flight flight);
 }

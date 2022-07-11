@@ -13,14 +13,19 @@ public class FlightProcessor {
         this.flightRepository = flightRepository;
     }
 
-    public FlightDto process(FlightRequest flightRequest) {
+    public Flight process(FlightRequest flightRequest) {
 
-        boolean isAvailable = flightService.findflight(flightRequest.getFlight());
-        if (isAvailable) {
+        boolean checkDeparture = flightService.flyFrom(flightRequest.getFlight());
+        boolean checkArrival = flightService.flyTo(flightRequest.getFlight());
+
+        if (checkDeparture) {
             flightRepository.create(flightRequest.getFlight());
-            return new FlightDto(flightRequest.getFlight(), true);
+            return new Flight(flightRequest.getFlight().getDeparture(), flightRequest.getFlight().getArrival());
+        } else if (checkArrival) {
+            flightRepository.create(flightRequest.getFlight());
+            return new Flight(flightRequest.getFlight().getDeparture(), flightRequest.getFlight().getArrival());
         } else {
-            return new FlightDto(flightRequest.getFlight(), false);
+            return new Flight(null, null);
         }
     }
 }

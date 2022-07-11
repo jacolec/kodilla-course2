@@ -11,10 +11,16 @@ public class FlightRequestRetriever implements FlightService {
     }
 
     @Override
-    public boolean findflight(Flight flight) {
+    public boolean flyTo(Flight flight) {
         System.out.println("SEARCHING FOR FLIGHT: " + "\n" +
-                "Departure from: " + flight.getDeparture() + "\n" +
                 "Arrival to: " + flight.getArrival());
+        return true;
+    }
+
+    @Override
+    public boolean flyFrom(Flight flight) {
+        System.out.println("SEARCHING FOR FLIGHT: " + "\n" +
+                "Departure from: " + flight.getDeparture());
         return true;
     }
 }
