@@ -5,9 +5,9 @@ import java.util.List;
 
 public class FlightList {
 
-    List<Flight> flightList = new ArrayList<>();
+    private final List<Flight> flightList = new ArrayList<>();
 
-    public List<Flight> fill() {
+    public List<Flight> getFlightList() {
 
         flightList.add(new Flight("Cracow", "Riga"));
         flightList.add(new Flight("Warsaw", "Chicago"));
@@ -16,6 +16,8 @@ public class FlightList {
         flightList.add(new Flight("Stockholm", "Warsaw"));
         flightList.add(new Flight("Poznan", "Amsterdam"));
         flightList.add(new Flight("Warsaw", "London"));
+        flightList.add(new Flight("Riga", "Amsterdam"));
+        flightList.add(new Flight("Moscow", "Tokio"));
 
         return new ArrayList<>(flightList);
     }

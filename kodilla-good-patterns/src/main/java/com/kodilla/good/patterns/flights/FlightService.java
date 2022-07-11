@@ -1,6 +1,9 @@
 package com.kodilla.good.patterns.flights;
 
+import java.util.List;
+
 public interface FlightService {
-    boolean flyTo(Flight flight);
-    boolean flyFrom(Flight flight);
+    List<Flight> searchFlightTo(String airportCity);
+    List<Flight> searchFlightFrom(String airportCity);
+    List<Flight> searchFlightWithStop(String arrivalCity, String departureCity);
 }
