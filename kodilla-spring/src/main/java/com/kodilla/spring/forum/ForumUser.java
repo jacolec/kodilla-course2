@@ -7,7 +7,7 @@ public class ForumUser implements User {
 
     private String username;
 
-    public ForumUser(String username) {
+    public ForumUser() {
         this.username = "John Smith";
     }
 
