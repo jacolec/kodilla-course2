@@ -17,11 +17,11 @@ public class FlightProcessor {
         System.out.println("SEARCHING FOR FLIGHTS FROM: Warsaw..." + "\n" +
                 "Flights found: " + "\n" +
                 flightsFromList);
-        List<Flight> flightsToList =  flightService.searchFlightTo("Amsterdam");
+        List<Flight> flightsToList =  flightService.searchFlightTo("Riga");
         System.out.println("SEARCHING FOR FLIGHTS TO: Riga..." + "\n" +
                 "Flights found: " + "\n" +
                 flightsToList);
-        List<Flight> flightsWithStopList = flightService.searchFlightWithStop("Cracow", "Amsterdam");
+        List<Flight> flightsWithStopList = flightService.searchFlightWithStop("Amsterdam", "Cracow");
         System.out.println("SEARCHING FOR FLIGHTS FROM: Cracow TO: Amsterdam..." + "\n" +
                 "Flights found: " + "\n" +
                 flightsWithStopList);

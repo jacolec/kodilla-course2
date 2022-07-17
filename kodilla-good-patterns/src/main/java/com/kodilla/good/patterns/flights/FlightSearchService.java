@@ -20,7 +20,6 @@ public class FlightSearchService implements FlightService {
                 .filter(e -> e.getArrival().equals(airportCity))
                 .collect(Collectors.toList());
         return tempFlightList;
-
     }
 
     @Override
