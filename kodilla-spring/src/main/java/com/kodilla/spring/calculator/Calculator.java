@@ -9,7 +9,7 @@ public final class Calculator {
     private final double a;
     private final double b;
 
-    public Calculator(double a, double b) {
+    public Calculator(final double a, final double b) {
         this.a = a;
         this.b = b;
     }
