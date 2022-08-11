@@ -13,11 +13,11 @@ public class UserTestSuite {
         User kurt = new ZGeneration("Kurt Wallander");
         //When
         String harryShares = harry.sharePost();
-        System.out.println("[Millenials]: " + harryShares);
+        System.out.println(harry.getName() + " [Millenials]: " + harryShares);
         String dickShares = dick.sharePost();
-        System.out.println("[Y Generation]: " + dickShares);
+        System.out.println(dick.getName() + " [Y Generation]: " + dickShares);
         String kurtShares = kurt.sharePost();
-        System.out.println("[Z Generation]: " + kurtShares);
+        System.out.println(kurt.getName() + " [Z Generation]: " + kurtShares);
         //Then
         Assertions.assertEquals("Sharing posts on Facebook", harryShares);
         Assertions.assertEquals("Sharing posts on Twitter", dickShares);
@@ -30,10 +30,10 @@ public class UserTestSuite {
         User harry = new Millenials("Harry Erskin");
         //When
         String harryShares = harry.sharePost();
-        System.out.println("[Millenials]: " + harryShares);
+        System.out.println(harry.getName() + " [Millenials]: " + harryShares);
         harry.setSharing(new TwitterPublisher());
         harryShares = harry.sharePost();
-        System.out.println("Now [Millenials]: " + harryShares);
+        System.out.println("Now " + harry.getName() + " [Millenials]: " + harryShares);
         //Then
         Assertions.assertEquals("Sharing posts on Twitter", harryShares);
     }
