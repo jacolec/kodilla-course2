@@ -27,12 +27,5 @@ public class BoardTestSuite {
         Assertions.assertEquals(toDoTask, toDoList.getTasks());
         Assertions.assertEquals(inProgressTask, inProgressList.getTasks());
         Assertions.assertEquals(doneTask, doneTaskList.getTasks());
-
-
-
-
-
-
-
     }
 }
