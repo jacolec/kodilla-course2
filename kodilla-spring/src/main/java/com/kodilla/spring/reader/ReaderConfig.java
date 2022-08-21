@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
-public final class ReaderConfig {
+public class ReaderConfig {
 
     @Autowired
     @Qualifier("book1")

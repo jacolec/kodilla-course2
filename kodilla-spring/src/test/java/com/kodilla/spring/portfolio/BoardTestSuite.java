@@ -2,13 +2,10 @@ package com.kodilla.spring.portfolio;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.ArrayList;
-
-@SpringBootTest
 public class BoardTestSuite {
 
     @Test
@@ -16,16 +13,19 @@ public class BoardTestSuite {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext(BoardConfig.class);
         Board board = context.getBean(Board.class);
-        String toDoTask = "toDoTask";
-        String inProgressTask = "inProgressTask";
-        String doneTask = "doneTask";
+
         //When
-        TaskList toDoList = new TaskList(board.getToDoList().addTask(toDoTask));
-        TaskList inProgressList = new TaskList(board.getInProgressList().addTask(inProgressTask));
-        TaskList doneTaskList = new TaskList(board.getDoneList().addTask(doneTask));
+        board.getToDoList().getTasks().add("Something to do...");
+        board.getInProgressList().getTasks().add("Something in progress...");
+        board.getDoneList().getTasks().add("Done stuff!");
+
         //Then
-        Assertions.assertEquals(toDoTask, toDoList.getTasks());
-        Assertions.assertEquals(inProgressTask, inProgressList.getTasks());
-        Assertions.assertEquals(doneTask, doneTaskList.getTasks());
+        Assertions.assertEquals("Something to do...", board.getToDoList().getTasks().get(0));
+        Assertions.assertEquals("Something in progress...", board.getInProgressList().getTasks().get(0));
+        Assertions.assertEquals("Done stuff!", board.getDoneList().getTasks().get(0));
+
+        System.out.println(board.getDoneList().getTasks().get(0));
+        System.out.println(board.getInProgressList().getTasks().get(0));
+        System.out.println(board.getDoneList().getTasks().get(0));
     }
 }
