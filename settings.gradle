@@ -8,4 +8,5 @@ include 'kodilla-spring'
 include 'kodilla-rps'
 include 'kodilla-spring-web'
 include 'kodilla-patterns'
+include 'kodilla-jdbc'
 
