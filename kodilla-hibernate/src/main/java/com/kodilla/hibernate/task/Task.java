@@ -1,6 +1,6 @@
 package com.kodilla.hibernate.task;
 
-import com.sun.istack.NotNull;
+import javax.validation.constraints.NotNull;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,6 +13,17 @@ public final class Task {
     private String description;
     private Date created;
     private int duration;
+    private TaskFinancialDetails taskFinancialDetails;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "TASK_FINANCIALS_ID")
+    public TaskFinancialDetails getTaskFinancialDetails() {
+        return taskFinancialDetails;
+    }
+
+    public void setTaskFinancialDetails(TaskFinancialDetails taskFinancialDetails) {
+        this.taskFinancialDetails = taskFinancialDetails;
+    }
 
     public Task() {
 
