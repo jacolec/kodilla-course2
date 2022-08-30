@@ -34,10 +34,5 @@ public class TaskFinancialDetailsDaoTestSuite {
         taskFinancialDetailsDao.deleteById(id);
     }
 
-    @Test
-    void testTaskDaoSaveWithFinancialDetails() {
-        //given
-        Task task = new Task();
-        task.setTaskFinancialDetails(new TaskFinancialDetails(new BigDecimal(120), false));
-    }
+
 }
