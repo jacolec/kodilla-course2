@@ -1,6 +1,6 @@
 package com.kodilla.hibernate.task.dao;
 
-import com.kodilla.hibernate.task.Task;
+
 import com.kodilla.hibernate.task.TaskFinancialDetails;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
