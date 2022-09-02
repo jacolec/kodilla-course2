@@ -2,7 +2,9 @@ package com.kodilla.hibernate.tasklist.dao;
 
 import com.kodilla.hibernate.task.Task;
 import com.kodilla.hibernate.task.TaskFinancialDetails;
-import com.kodilla.hibernate.tasklist.TaskList;
+
+import com.kodilla.hibernate.task.TaskList;
+import com.kodilla.hibernate.task.dao.TaskListDao;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
