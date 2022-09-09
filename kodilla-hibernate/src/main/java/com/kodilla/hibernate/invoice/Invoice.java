@@ -2,30 +2,27 @@ package com.kodilla.hibernate.invoice;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "INVOICE")
 public class Invoice {
-
     private int id;
     private String number;
-    private List<Item> items;
-
+    private List<Item> items = new ArrayList<>();
 
     public Invoice() {
-
     }
 
-    public Invoice(String number, List<Item> items) {
+    public Invoice(String number) {
         this.number = number;
-        this.items = items;
     }
 
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "INVOICE_ID", unique = true)
+    @Column(name = "ID", unique = true)
     public int getId() {
         return id;
     }
@@ -34,6 +31,7 @@ public class Invoice {
         this.id = id;
     }
 
+    @NotNull
     @Column(name = "NUMBER")
     public String getNumber() {
         return number;
@@ -45,9 +43,9 @@ public class Invoice {
 
     @OneToMany(
             targetEntity = Item.class,
-            mappedBy = "item",
+            mappedBy = "invoice",
             cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER
+            fetch = FetchType.LAZY
     )
     public List<Item> getItems() {
         return items;
@@ -56,4 +54,6 @@ public class Invoice {
     public void setItems(List<Item> items) {
         this.items = items;
     }
+
+
 }
