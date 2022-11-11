@@ -13,7 +13,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.findCompanyByAnyString",
-        query = "SELECT * FROM companies WHERE company_name LIKE :ANYSTRING",
+        query = "SELECT * FROM companies WHERE company_name LIKE = :ANYSTRING",
         resultClass = Company.class
 )
 
