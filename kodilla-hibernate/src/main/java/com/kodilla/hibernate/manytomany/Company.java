@@ -11,6 +11,11 @@ import java.util.List;
         resultClass = Company.class
 )
 
+@NamedNativeQuery(
+        name = "Company.findCompanyByAnyString",
+        query = "SELECT * FROM companies WHERE company_name LIKE :ANYSTRING",
+        resultClass = Company.class
+)
 
 @Entity
 @Table(name = "COMPANIES")
