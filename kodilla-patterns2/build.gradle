@@ -23,6 +23,10 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.7.5'
+    implementation group: 'org.springframework', name: 'spring-aspects', version: '5.3.23'
+    runtimeOnly group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.9.1'
 }
 
 tasks.named('test') {
