@@ -17,4 +17,12 @@ public final class ItemDto {
     public double getQty() {
         return qty;
     }
+
+    @Override
+    public String toString() {
+        return "ItemDto{" +
+                "productId=" + productId +
+                ", qty=" + qty +
+                '}';
+    }
 }
