@@ -105,11 +105,25 @@ public class CrudAppTestSuite {
         return result;
     }
 
+    private void deleteTestTask(String taskName) throws InterruptedException {
+
+        driver.findElements(By.xpath("//form[contains(@class, \"datable__row\")]")).stream()
+                .filter(t -> t.findElement(By.xpath("//p[contains(@class, \"datable__field-value\")]"))
+                        .getText().equals(taskName))
+                .forEach(d -> {
+                    WebElement element = d.findElement(By.xpath("//button[@data-task-delete-button]"));
+                    element.click();
+                });
+
+        Thread.sleep(5000);
+    }
+
     @Test
     public void shouldCreateTrelloCard() throws InterruptedException {
         String taskName = createCrudAppTestTask();
         sendTestTaskToTrello(taskName);
-        assertTrue(checkTaskExistsInTrello(taskName));
+        //assertTrue(checkTaskExistsInTrello(taskName));
+        deleteTestTask(taskName);
     }
 
 
